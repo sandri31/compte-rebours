@@ -1,20 +1,14 @@
-<div id="<%= dom_id countdown %>">
-  <p>
-    <strong>Name:</strong>
-    <%= countdown.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= countdown.description %>
-  </p>
-
-  <% seconds_until_target_time = countdown.target.to_i - Time.now.to_i %>
-
-  <%= content_tag(:h1, "", data: {
-    controller: "countdown",
-    countdown_target: "countdown",
-    seconds_until_end_value: seconds_until_target_time
-  }) %>
-
+<div id="<%= dom_id countdown %>" class="card text-white bg-dark mb-3">
+  <div class="card-header">
+    <h3 class="card-title"><%= countdown.name %></h3>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= countdown.description %></p>
+    <% seconds_until_target_time = countdown.target.to_i - Time.now.to_i %>
+    <%= content_tag(:h1, "", data: {
+      controller: "countdown",
+      countdown_target: "countdown",
+      seconds_until_end_value: seconds_until_target_time
+    }, class: "display-1") %>
+  </div>
 </div>
