@@ -1,10 +1,10 @@
-<h1>Editing countdown</h1>
+<h1>Editeur de compte à rebours</h1>
 
 <%= render "form", countdown: @countdown %>
 
 <br>
 
-<div>
-  <%= link_to "Show this countdown", @countdown %> |
-  <%= link_to "Back to countdowns", countdowns_path %>
+<div class="d-flex justify-content-center">
+  <%= link_to "Afficher", @countdown, class: "btn btn-primary mx-3" %>
+  <%= link_to "Retour", countdowns_path, class: "btn btn-secondary" %>
 </div>
